@@ -13,10 +13,10 @@
         #word {
             font-size: 2em;
             margin-bottom: 20px;
-            width: 300px; /* Stała szerokość placeholdera */
-            height: 60px; /* Stała wysokość placeholdera */
-            line-height: 60px; /* Wyrównanie tekstu do środka w pionie */
-            border: 1px solid #ccc; /* Ramka dla lepszej widoczności */
+            width: 300px;
+            height: 60px;
+            line-height: 60px;
+            border: 1px solid #ccc;
             display: inline-block;
             vertical-align: middle;
         }
@@ -28,7 +28,7 @@
         #controls {
             margin-top: 20px;
         }
-        #slider {
+        .slider {
             width: 300px;
             margin-top: 20px;
         }
@@ -42,15 +42,22 @@
 <body>
     <div id="word"></div>
 
-    <div id="controls">
-        <button id="losuj">Losuj słowo</button>
-        <button id="dobrze" disabled>Dobrze</button>
-        <button id="zle" disabled>Źle</button>
-    </div>
+	<div id="controls">
+		<button id="losuj">Losuj słowo</button>
+		<button id="powtorz" disabled>Powtórz słowo</button>
+		<button id="dobrze" disabled>Dobrze</button>
+		<button id="zle" disabled>Źle</button>
+		<button id="reset">Reset</button>
+	</div>
 
-    <div id="slider">
+    <div class="slider">
         <label for="czas">Długość wyświetlania słowa: <span id="czas-wartosc">100</span> ms</label>
         <input type="range" id="czas" min="50" max="2000" value="100" step="50">
+    </div>
+
+    <div class="slider">
+        <label for="dlugosc">Długość słów: <span id="dlugosc-wartosc">Średnie</span></label>
+        <input type="range" id="dlugosc" min="1" max="3" value="2" step="1">
     </div>
 
     <script src="app.js"></script>
